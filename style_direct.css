@@ -1,0 +1,330 @@
+
+.form_calculate .h3_forms{
+    max-width: 500px;
+    float:left;
+    font-size: 21px;
+}
+.form_calculate .clear{
+    clear: both;
+}
+.form_calculate .checkbox-inline{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.form_calculate .checkbox-inline input[type="checkbox"]{
+    float: left;
+    margin-top: 3px;
+    margin-right: 4px;
+}
+.form_calculate .none{
+    display: none;
+}
+.form_calculate_full .settings_adv {
+    max-width: 450px;
+}
+.form_calculate_full .servises p{
+    position: relative;
+}
+.servises,.service_wrapper {
+    max-width: 300px;
+    margin-top: 20px;
+}
+.form_calculate_full .servises .name{
+    display: block;
+    margin-right: 30px;
+    
+}
+
+.servises .res{
+    position: absolute;
+    display: block;
+    top:0;
+    right: 0;
+    bottom: 0;
+    color: green;
+    margin: auto;
+}
+
+.servises .res.glyphicon-remove{
+    color: red;
+}
+
+.settings_adv .wrap{
+    position: relative;
+}
+.settings_adv .wrap #sign{
+    position: absolute;
+    right: 0;
+}
+.form_calculate_full .collapse_desc{
+    position: relative;
+    display: block;
+}
+
+.form_calculate_full .collapse_desc .total{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 10px;
+    
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body.content{
+    border: 0;
+}
+.form_calculate_full .wrap_for_info{
+    border-top: 1px solid #ddd;
+    margin: -20px 0;
+    padding: 15px 0;
+    margin-top: 15px;
+}
+
+.panel-body.h1_head{
+    padding-bottom: 0;
+}
+.panel-body.content{
+    padding-top: 0; 
+}
+.form_calculate_full .result_but p{
+    font-size: 17px;
+}
+.form_calculate_full .result_but{
+    float: right;
+}
+.form_calculate_full .result_button{
+    text-align: center;
+    clear: both;
+}
+.form_calculate_full .main_choose{
+    display: none;
+}
+.form_calculate .col-xs-6{
+    padding-bottom: 100px;
+}
+.serveds_y,.serveds_g{
+    display: none;
+    font-weight: bold;
+}
+.collapse_desc_yandex span,.collapse_desc_google span{
+    font-size: 12px;
+} 
+.collapse_desc_yandex .title,.collapse_desc_google .title{
+    display: block;
+    font-weight: bold;
+    
+} 
+.collapse_desc_yandex .title_m,.collapse_desc_google .title_m{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+    text-shadow: 1px 1px 1px #b3b3b3;
+}
+.collapse_desc_yandex,.collapse_desc_google{
+    text-decoration: none !important;
+}
+.form_calculate_full .h5_title{
+    margin: 0;
+}
+.form_calculate_full .wrap_for_info{
+    border: 0;
+    margin: 0;
+    
+}
+.form_calculate_full .wrap_for_info .h5_title{
+    margin: 0 0 15px 0;
+}
+.form_calculate_full .h5_title{
+    font-weight: bold;
+}
+.form_calculate_full .wrap_for_info  .res {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: green;
+    margin: auto;
+}
+.form_calculate_full .wrap_for_info p{
+    position: relative;
+}
+.form_calculate_full .wrap_for_info .res.glyphicon-remove{
+   color: red; 
+}
+.form_calculate_full .service .dropdown{
+    float: left;
+    margin-right: 10px;
+}
+.classic .btn,.express .btn{
+    margin-right: 10px;
+}
+.serv_main_span span{
+    display: none;
+}
+.servises_elem_serv {
+    padding-top: 50px;
+}
+.servises_elem_serv .res{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: green;
+    margin: auto;
+}
+.servises_elem_serv p{
+    position: relative;
+}
+.servises_elem_serv .res.glyphicon-remove{
+    color: red;
+}
+.form_direct .form-group{
+    display: none;
+}
+.form_calculate_full .panel-group {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+.form_calculate_full .panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 4px;
+}
+
+.form_calculate_full .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.form_calculate_full .panel-default {
+    border-color: #ddd;
+}
+
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.panel-group .panel-heading {
+    border-bottom: 0;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a {
+    color: inherit;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #ddd;
+}
+
+
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: 1px solid #ddd;
+}
+
+.panel-body.h1_head {
+    padding-bottom: 0;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body.content {
+    border: 0;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #ddd;
+}
+
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: 1px solid #ddd;
+}
+
+.panel-body.content {
+    padding-top: 0;
+}
+
+.form_calculate_full .panel-body {
+    padding: 15px;
+}
+.form_calculate_full{
+     width: 1170px;
+    margin: 0 auto; 
+}
+.form_calculate_full .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.pack_dropdown li{
+    list-style: none;
+}
+.pack_dropdown li a{
+    text-decoration: none;
+}
+.settings_adv{
+    overflow: hidden;
+}
+.form_calculate_full .form-control{
+    width: 100%;
+}
+.servise_main_span,.serv_main_span{
+    line-height: 16px;
+}
+.form_calculate_full .title_m{
+    line-height: 7px;
+}
+.panel-body.h1_head{
+    padding: 0;
+}
+.panel-body.content{
+    padding: 0 15px;
+}
+.form_calculate_full .serveds_y{
+    line-height: 16px;
+}
+.y-g .g,.y-g .y{
+    margin-right: 3px;
+    float: left;
+    margin-top: 3px;
+}
+.wrap_for_info {
+    line-height: 5px;
+}
+.panel-body.content .wrap_for_info{
+    padding-bottom: 0;
+}
+.panel-body.content .wrap_for_info:last-child{
+    padding: 15px 0;
+}
+.form_calculate_full .servises_elem p{
+    padding: 0;
+}
+.radio_direct{
+    float: left;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+.form_calculate_full .fa-times.res{
+    color: red;
+}
+.radio_wrap{
+    padding-left: 1px;
+}
