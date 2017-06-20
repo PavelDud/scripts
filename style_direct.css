@@ -67,9 +67,10 @@
 
 .form_calculate_full .collapse_desc .total{
     position: absolute;
-    top: 50%;
+    top: 0;
     margin-top: -10px;
-    right: 10px;
+    right: 0px;
+    font-weight: bold;
     
 }
 .panel-default>.panel-heading+.panel-collapse>.panel-body.content{
@@ -171,9 +172,7 @@
 .serv_main_span span{
     display: none;
 }
-.servises_elem_serv {
-    padding-top: 50px;
-}
+
 .servises_elem_serv .res{
     position: absolute;
     display: block;
@@ -337,4 +336,10 @@
 }
 .radio_wrap{
     padding-left: 1px;
+}
+
+.form_calculate_full .express h3,.form_calculate_full .classic h3{
+    font-size: 14px;
+    padding-top: 10px;
+    margin: 0;
 }
