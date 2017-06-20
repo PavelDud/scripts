@@ -604,4 +604,8 @@ myJQuery(".form-group").css('display','block');
   myJQuery(window).click(function(){
       myJQuery(".dropdown").removeClass('open')
   })
+    myJQuery(".form_calculate .dropdown-menu li a").click(function(e){
+    e.preventDefault();
+    })
+    
 });
