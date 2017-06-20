@@ -184,7 +184,7 @@ myJQuery(function () {
 //             myJQuery(".p_disc").removeClass('none');
 //        }
 myJQuery(".form-group").css('display','block');
-
+none_result();
     }
     function removeServed(flag) {
            
