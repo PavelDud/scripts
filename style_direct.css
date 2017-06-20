@@ -2,19 +2,23 @@
 .form_calculate .h3_forms{
     max-width: 500px;
     float:left;
-    font-size: 21px;
+    font-size: 17px;
 }
 .form_calculate .clear{
     clear: both;
 }
 .form_calculate .checkbox-inline{
-    margin-top: 10px;
-    margin-left: 10px;
+    position: relative;
+    top: 6px;
+    display: block;
+    float: right;
+    min-width: auto;
 }
 .form_calculate .checkbox-inline input[type="checkbox"]{
-    float: left;
-    margin-top: 3px;
-    margin-right: 4px;
+    float: right;
+    margin-top: 4px;
+    margin-right: 5px;
+    margin-left: 6px;
 }
 .form_calculate .none{
     display: none;
