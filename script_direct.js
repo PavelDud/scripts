@@ -15,9 +15,14 @@ myJQuery(function () {
             myJQuery(".result_but").css('display','none');
            
         }else{
-             myJQuery(".result").css('display','block');
-            myJQuery(".form_direct").css('display','block');
-            myJQuery(".result_but").css('display','block');
+            myJQuery(".result").css('display', 'block');
+            myJQuery(".form_direct").css('display', 'block');
+            myJQuery(".result_but").css('display', 'block');
+            if (flag_service == false && myJQuery(".select_btn").hasClass("disabled")) {
+                myJQuery(".order_main").css('display', 'none');
+            } else {
+                myJQuery(".order_main").css('display', 'block');
+            }
            
         }
     }
@@ -483,6 +488,27 @@ none_result();
 //       check_set_email();
 //        
 //    });
+      function removeServeds() {
+        if (myJQuery(".y").prop("checked") && myJQuery(".g").prop("checked")) {
+            if (myJQuery(".dropdown .select_btn").hasClass('disabled')) {
+                if (myJQuery(".select_btn.disabled+ul li a").hasClass('selected_price')) {
+                    removeServed(false);
+                }
+            }
+        }
+    }
+       myJQuery(".radio_wrap input[type='radio']").change(function () {
+        if (myJQuery(".y").prop("checked")) {
+            myJQuery(".result>div.yandex").removeClass("none");
+        }
+        if (myJQuery(".g").prop("checked")) {
+            myJQuery(".result>div.google").removeClass("none");
+        }
+        if(!myJQuery("#settings_service").prop("checked")){
+            removeServed(false)
+        }else{removeServed(true)}
+        
+    });
     myJQuery(".radio_wrap input[type='radio']").change(function () {
  
         if (myJQuery("#toggle-two").prop("checked")) {
@@ -508,7 +534,7 @@ none_result();
             myJQuery(".express").removeClass("none");
             myJQuery(".classic").addClass("none");
         }
-        
+        removeServeds();
        check_set_email();
         
     });
@@ -532,7 +558,14 @@ none_result();
             myJQuery(".service .btn-info").addClass("disabled");
             myJQuery(".result_but .discount").text(but_id.data('discount'));
             if(myJQuery(".dropdown .select_btn").hasClass('disabled')){
-                myJQuery(".result").html(" ");
+                   if(myJQuery(".select_btn.disabled+ul li a").hasClass('selected_price')){
+                    myJQuery(".servises_elem_serv.one_var").addClass('none')
+                    if(flag_service==false){
+                        myJQuery(".order_main").css('display','none')
+                    }
+                    
+                    
+                }
             }
         } else {
             myJQuery(".service .btn-info").addClass("disabled");
@@ -574,21 +607,11 @@ none_result();
             set_description_service(but_id);
       
         }
+         removeServeds();
         check_set_email()
        none_result();
     });
-    myJQuery(".radio_wrap input[type='radio']").change(function () {
-        if (myJQuery(".y").prop("checked")) {
-            myJQuery(".result>div.yandex").removeClass("none");
-        }
-        if (myJQuery(".g").prop("checked")) {
-            myJQuery(".result>div.google").removeClass("none");
-        }
-        if(!myJQuery("#settings_service").prop("checked")){
-            removeServed(false)
-        }else{removeServed(true)}
-        
-    });
+ 
     
     myJQuery(".dropdown").click(function(e){
          e.stopPropagation();
