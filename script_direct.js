@@ -8,7 +8,7 @@ myJQuery(function () {
     var flag_service=false;
     var htmls="";
     function none_result(){
-        if(!myJQuery("#settings").prop("checked") && !myJQuery("#settings_service").prop("checked") || (!myJQuery(".y").prop("checked") && !myJQuery(".g").prop("checked"))){
+        if(!myJQuery("#settings").prop("checked") && (!myJQuery("#settings_service").prop("checked") || flag_serv==false) || (!myJQuery(".y").prop("checked") && !myJQuery(".g").prop("checked"))){
              htmls=myJQuery(".result").html();
             myJQuery(".result").css('display','none');
             myJQuery(".form_direct").css('display','none');
