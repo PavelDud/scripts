@@ -155,9 +155,13 @@
 .form_calculate_full .wrap_for_info .res.glyphicon-remove{
    color: red; 
 }
+.form_calculate_full .service .dropdown .btn{
+ display:block;
+}
 .form_calculate_full .service .dropdown{
-    float: left;
-    margin-right: 10px;
+  margin-bottom: 4px;
+    display: block;
+    width: 120px;
 }
 .classic .btn,.express .btn{
     margin-right: 10px;
