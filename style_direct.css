@@ -114,6 +114,7 @@
 .collapse_desc_yandex .title,.collapse_desc_google .title{
     display: block;
     font-weight: bold;
+    line-height: 0px;
     
 } 
 .collapse_desc_yandex .title_m,.collapse_desc_google .title_m{
@@ -136,6 +137,7 @@
 }
 .form_calculate_full .wrap_for_info .h5_title{
     margin: 0 0 15px 0;
+    font-size: 14px;
 }
 .form_calculate_full .h5_title{
     font-weight: bold;
@@ -296,7 +298,8 @@
     line-height: 16px;
 }
 .form_calculate_full .title_m{
-    line-height: 7px;
+    line-height: 19px;
+    padding-bottom: 9px;
 }
 .panel-body.h1_head{
     padding: 0;
