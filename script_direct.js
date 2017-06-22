@@ -360,7 +360,7 @@ myJQuery(function () {
         none_result();
         if (myJQuery(this).prop("checked")) {
             if(myJQuery(".btn-group_but_tarifs .btn").hasClass('active')){
-            group_but_tarifs_func(myJQuery(".btn-group_but_tarifs .btn.active"))
+            group_but_tarifs_func(myJQuery(".btn-group-tarifs .btn.active"))
         }
             removeServed(true);
               
