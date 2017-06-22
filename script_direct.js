@@ -192,7 +192,7 @@ myJQuery(function () {
 //            myJQuery(".result>div.google.settings .total .first").text(cost_served + coust_current);
 //            myJQuery(".result>div.yandex.settings .total .first").text(cost_served + coust_current);
 //        }
-        myJQuery(".serv_main_span .tariffs").text(trim(tariff));
+        myJQuery(".serv_main_span .tariffs").text(tariff);
         
         if (but_month != undefined) {
             var price = but_month.find('input').data('pucket');
