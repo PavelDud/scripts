@@ -168,7 +168,7 @@ myJQuery(function () {
         }
         
           
-        var tariff = that.parent().text();
+        var tariff = that.data('tariff');
        
         if (that != undefined) {
             myJQuery(".service .servises_elem").each(function () {
