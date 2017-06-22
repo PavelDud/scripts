@@ -9,7 +9,7 @@
 }
 .form_calculate .checkbox-inline{
     position: relative;
-    top: 6px;
+    top: 25px;
     display: block;
     float: right;
     min-width: auto;
@@ -342,4 +342,110 @@
     font-size: 14px;
     padding-top: 10px;
     margin: 0;
+}
+.form_calculate_full {
+    margin: 0 auto;
+    width: 839;
+    overflow: hidden;
+}
+.main_choose{
+    overflow: hidden;
+}
+.form_calculate_full .main_choose{
+    display: block;
+}
+.pack_dropdown .btn{
+    float: left;
+    min-width: 15px;
+    width: 71px;
+    margin-right: 6px;
+    padding: 5px 8px;
+}
+
+[data-toggle=buttons] .btn input[type=checkbox], [data-toggle=buttons] .btn input[type=radio], [data-toggle=buttons] .btn-group .btn input[type=checkbox], [data-toggle=buttons] .btn-group .btn input[type=radio] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+.pack_dropdown .btn-group{
+    overflow: hidden;
+    padding: 4px;
+}
+.btn-group .btn-group-s{
+    padding: 0;
+}
+.btn-group .btn-group-s .btn_col{
+    padding: 0;
+}
+.btn_col{
+    position: relative;
+}
+.btn_col p{
+    clear: both;
+    padding: 0;
+    text-align: center;
+}
+.form_calculate_full .btn-warning.active,.form_calculate_full .btn-info.active,.form_calculate_full .btn-primary.active,.form_calculate_full .btn-danger.active{
+    color: #ffffff;
+    border: 1px solid #000;
+    background: linear-gradient(to bottom, black, #d0d0d0);
+}
+.servises{
+    clear: both;
+}
+.y-g .checkbox:first-child{
+    float: left;
+    margin-right: 10px;
+}
+.y-g .checkbox label{
+    font-size: 22px;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #d8d8d8 !important;
+    border: 1px solid #848484 !important;
+    color: #000 !important;
+}   
+.block_div-disable{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: not-allowed;
+}
+.btn-group_but_tarifs .disabled + .price_tarif{
+    display: none;
+}
+.form_calculate .h3_forms{
+    margin: 0;
+    margin-top: 20px;
+}
+.form_calculate_full .fa-check:not(.fa-check-mounth),.form_calculate_full .fa-times:not(.fa-check-mounth){
+    top: 4px;
+    font-weight: bold;
+    
+}
+.form_calculate_full .name_label{
+    padding: 11px 0 0;
+    display: block;
+    font-weight: bold;
+   
+}
+.fa-check-mounth::before{
+    display: none;
+}
+.fa-check-mounth{
+    font: 13px/20px Arial,Geneva,Helvetica,sans-serif;
+    font-weight: bold;
+}
+.form_calculate_full .wrap_for_info p {
+    position: relative;
+    line-height: 20px;
+    padding: 0;
 }
