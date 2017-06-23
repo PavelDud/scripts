@@ -82,7 +82,7 @@ myJQuery(function () {
             myJQuery(".result>div.yandex.settings .count_phraze").text(words);
             myJQuery(".result>div.yandex.settings .total .first").text(cost);
             myJQuery(".result>div.yandex.settings .description").text(description);
-            myJQuery(".servise_prices").text(cost);
+//            myJQuery(".servise_prices").text(cost);
         }
         if (!myJQuery(".result>div.google.settings").hasClass("none")) {
             coust_current = Number(cost);
@@ -90,7 +90,7 @@ myJQuery(function () {
             myJQuery(".result>div.google.settings .count_phraze").text(words);
             myJQuery(".result>div.google.settings .total .first").text(cost);
             myJQuery(".result>div.google.settings .description").text(description);
-            myJQuery(".servise_prices").text(cost);
+//            myJQuery(".servise_prices").text(cost);
         }
         var tot = 0;
        
@@ -282,11 +282,10 @@ myJQuery(function () {
         }
     }
     
-    //заказать Настройка рекламной компании
-    myJQuery("#settings").change(function () {
-       none_result();
+    function settings_check(){
+        none_result();
         var tot=0;
-        if (myJQuery(this).prop("checked")) {
+        if (myJQuery("#settings").prop("checked")) {
 //            myJQuery(".settings_adv").removeClass("none");
 //            myJQuery('#toggle-two').bootstrapToggle({
 //                on: 'Классический',
@@ -350,17 +349,23 @@ myJQuery(function () {
         }
         }
       check_set_email()
-    });
+    }
+    
+    //заказать Настройка рекламной компании
+    myJQuery("#settings").change(settings_check);
+    
     
 //    myJQuery(".result>div.google .total .first").text(cost_served + coust_current);
 //    myJQuery(".result>div.yandex .total .first").text(cost_served + coust_current);
 
     //заказать Обслуживание рекламной компании
-    myJQuery("#settings_service").change(function () {
-        none_result();
-        if (myJQuery(this).prop("checked")) {
+    
+    function settings_service_func(){
+                none_result();
+        if (myJQuery("#settings_service").prop("checked")) {
             if(myJQuery(".btn-group_but_tarifs .btn").hasClass('active')){
-            group_but_tarifs_func(myJQuery(".btn-group-tarifs .btn.active"))
+//            group_but_tarifs_func(myJQuery(".btn-group_but_tarifs .btn input"))
+                group_but_tarifs_func(myJQuery(".btn-group-tarifs .btn.active"))
         }
             removeServed(true);
               
@@ -370,7 +375,10 @@ myJQuery(function () {
             }
         }
         check_set_email()
-    });
+    }
+    
+    
+    myJQuery("#settings_service").change(settings_service_func);
 
     function check_set_email() {
         if (myJQuery(".y").prop("checked") && (myJQuery("#settings").prop("checked") || myJQuery("#settings_service").prop("checked"))) {
@@ -391,7 +399,7 @@ myJQuery(function () {
                     htmls += "<p style='color:#000'>"+myJQuery(this).find('.title').text() +"</p>";
                     htmls += "<p style='color:#000'>Тариф: " + myJQuery(this).find('.tariff').text() + "</p>";
                     htmls += "<p class='desc_direct' style='color:#000'>" +  myJQuery(this).find('.description').text() + " : " + myJQuery(this).find('.count_phraze').text() + "</p>";
-                     htmls += "<p class='' style='color:#000'>Цена - " + myJQuery(this).find('.servise_prices').text() + " руб.</p>";
+                     htmls += "<p class='' style='color:#000'>Цена - " + myJQuery(this).find('.total .first').text() + " руб.</p>";
                      htmls += "<p style='color:#000'>В услуги включено: </p><p>" + myJQuery(this).find('.wrap_for_info').html()  + "</p>";
                  }
                  else if(myJQuery(this).hasClass('service')){
@@ -451,6 +459,7 @@ myJQuery(function () {
 //            }
 //            return htmls;
         }
+         $('[data-toggle="tooltip"]').tooltip();
     }
       //кнопки под классиком
       
@@ -465,7 +474,8 @@ myJQuery(function () {
         thiss.addClass("select_btn");
         var btn_id = thats.attr("id");
 //        myJQuery("#sign").html(myJQuery(this).data("label"));
-        myJQuery("#sign").html(myJQuery("<img src='" + thats.data("src") + "' title='" + thats.data("label") + "'>"));
+//        myJQuery("#sign").html(myJQuery("<img src='" + thats.data("src") + "' title='" + thats.data("label") + "'><span class='name_tariff'>Тариф: "+thats.data("label")+"</span>"));
+myJQuery("#sign").html(myJQuery("<span class='background_zodiak' style='background:url(" + thats.data("src") + ") no-repeat 0 50%' title='" + thats.data("label") + "'><span class='name_tariff'>Тариф: "+thats.data("label")+"</span></span>"))
          if(myJQuery("#settings").prop("checked")){
         set_description(thats);
     }
@@ -492,7 +502,7 @@ myJQuery(function () {
 
 
 //        myJQuery("#sign").text(myJQuery(this).data("label"));
-        myJQuery("#sign").html(myJQuery("<img src='" + thats.data("src") + "' title='" + thats.data("label") + "'>"));
+        myJQuery("#sign").html(myJQuery("<img src='" + thats.data("src") + "' title='" + thats.data("label") + "'><span class='name_tariff'>Тариф: "+thats.data("label")+"</span>"));
         if(myJQuery("#settings").prop("checked")){
         set_description(thats);
     }
@@ -510,7 +520,7 @@ myJQuery(function () {
     myJQuery(".classic .btn").click(function () {
         func_under_classic(myJQuery(this))
     });
-    
+    func_under_classic(myJQuery(".classic .btn.select_btn"))
      myJQuery(".express .btn").click(function () {
         func_under_express(myJQuery(this))
     });
@@ -551,12 +561,16 @@ myJQuery(function () {
     //радиоконопки выбор месяца в обслуживании
     
     function group_but_tarifs_func(that) {
+        myJQuery(".btn-group_but_tarifs .btn").removeClass("select_btn");
+         myJQuery(".btn-group_but_tarifs .btn input").removeClass("selected_price");
+         if(that.find('input').data('tariff')){
+             myJQuery(".service_tariff").text(that.find('input').data('tariff'));
+         }
+             
         if (myJQuery("#settings_service").prop('checked')) {
             var cur_price;
             var btn_id;
             flag_serv = true;
-            myJQuery(".btn-group_but_tarifs .btn").removeClass("select_btn");
-            myJQuery(".btn-group_but_tarifs .btn input").removeClass("selected_price");
             if (!that.hasClass("disabled") && !get_id("active").parent().hasClass('disabled')) {
 
                 myJQuery(".service .servises_elem").addClass("none");
@@ -576,6 +590,7 @@ myJQuery(function () {
                         }
                     });
                 } else {
+                    
                     that.addClass("select_btn");
                     that.find('input').addClass("selected_price");
                     btn_id = that.data('id');
@@ -608,67 +623,59 @@ myJQuery(function () {
         }
     }
     
-    //изменение тарифа радиобаттонами
-    myJQuery(".radio_wrap input[type='radio']").change(function () {
-       if (myJQuery("#settings").prop("checked")) {
-        if (myJQuery(".y").prop("checked")) {
-            myJQuery(".result>div.yandex").removeClass("none");
+    
+    function input_radio() {
+        if (myJQuery("#settings").prop("checked")) {
+            if (myJQuery(".y").prop("checked")) {
+                myJQuery(".result>div.yandex").removeClass("none");
+            }
+            if (myJQuery(".g").prop("checked")) {
+                myJQuery(".result>div.google").removeClass("none");
+            }
+            if (!myJQuery("#settings_service").prop("checked")) {
+                removeServed(false)
+            } else {
+                removeServed(true)
+            }
         }
-        if (myJQuery(".g").prop("checked")) {
-            myJQuery(".result>div.google").removeClass("none");
-        }
-        if(!myJQuery("#settings_service").prop("checked")){
-            removeServed(false)
-        }else{removeServed(true)}
     }
     
-    });
+    //изменение тарифа радиобаттонами
     myJQuery(".radio_wrap input[type='radio']").change(function () {
-       
- 
+     input_radio();
+    });
+    
+    function input_radio_switch(){
         if (myJQuery("#toggle-two").prop("checked")) {
             myJQuery(".classic").removeClass("none");
             myJQuery(".express").addClass("none");
             myJQuery("#sign").text("");
-            
             myJQuery(".classic .btn").each(function () {
                 if (myJQuery(this).hasClass("select_btn")) {
-//                    myJQuery("#sign").text(myJQuery(this).data("label"));
-                        myJQuery("#sign").html(myJQuery("<img src='"+myJQuery(this).data("src")+"' title='"+myJQuery(this).data("label")+"'>"));
-                        if (myJQuery("#settings").prop("checked")) {
-                    set_description(myJQuery(this));
-                }
+                    myJQuery("#sign").html(myJQuery("<img src='" + myJQuery(this).data("src") + "' title='" + myJQuery(this).data("label") + "'><span class='name_tariff'>Тариф: " + myJQuery(this).data("label") + "</span>"));
+                    if (myJQuery("#settings").prop("checked")) {
+                        set_description(myJQuery(this));
+                    }
                 }
             });
-
-//            if (myJQuery("#settings").prop("checked")) {
-//                myJQuery(".classic .btn").each(function () {
-//                    if (myJQuery(this).hasClass("select_btn")) {
-//                        func_under_classic(myJQuery(this))
-//                    }
-//                })
-//            }
-            
-            
-        } else if(myJQuery("#toggle-three").prop("checked")) {
+        } else if (myJQuery("#toggle-three").prop("checked")) {
             myJQuery("#sign").text("");
-           
             myJQuery(".express .btn").each(function () {
                 if (myJQuery(this).hasClass("select_btn")) {
-//                    myJQuery("#sign").text(myJQuery(this).data("label"));
-                        myJQuery("#sign").html(myJQuery("<img src='"+myJQuery(this).data("src")+"' title='"+myJQuery(this).data("label")+"'>"));
-                         if (myJQuery("#settings").prop("checked")) {
-                    set_description(myJQuery(this));
-                     }
+                    myJQuery("#sign").html(myJQuery("<img src='" + myJQuery(this).data("src") + "' title='" + myJQuery(this).data("label") + "'><span class='name_tariff'>Тариф: " + myJQuery(this).data("label") + "</span>"));
+                    if (myJQuery("#settings").prop("checked")) {
+                        set_description(myJQuery(this));
+                    }
                 }
             });
-       
             myJQuery(".express").removeClass("none");
             myJQuery(".classic").addClass("none");
         }
         removeServeds();
-       check_set_email();
-   
+        check_set_email();
+    }
+    myJQuery(".radio_wrap input[type='radio']").change(function () {
+        input_radio_switch();
     });
 
 
@@ -690,7 +697,8 @@ myJQuery(function () {
         }
         if (myJQuery(".y").prop("checked") && myJQuery(".g").prop("checked")) {
             if (!myJQuery(".btn-group_but_tarifs .btn-info").hasClass('disabled')) {
-                myJQuery(".btn-group_but_tarifs .btn-info").parent().append(myJQuery('<div class="block_div-disable">'));
+                myJQuery(".btn-group_but_tarifs .btn-info").parent().append(myJQuery('<div class="block_div-disable" data-toggle="tooltip" title="При выборе обеих систем этот тариф недоступен">'));
+                 $('[data-toggle="tooltip"]').tooltip();
             }
             myJQuery(".btn-group_but_tarifs .btn-info").addClass("disabled");
             if (myJQuery(".btn-group_but_tarifs .btn-info").hasClass('disabled') && myJQuery("#settings_service").prop("checked") && (myJQuery(".btn-group_but_tarifs .btn-info").hasClass('active') || !myJQuery(".btn-group_but_tarifs .btn").hasClass('active')) && flag_serv!=false) {
@@ -753,11 +761,79 @@ myJQuery(function () {
        none_result();
     });
  
-    
 
+ 
+    myJQuery(".checkbox-inline .btn").click(function () {
+        myJQuery(this).toggleClass('active_checkbox');
+        if (myJQuery(this).hasClass('active_checkbox')) {
+            myJQuery(this).parent().find('.busket_title').text('Убрать из корзины');
+            
+            myJQuery(this).parent().find('.input_shop').attr('checked', 'checked');
+            if (myJQuery(this).parent().find('.input_shop').attr('id') == "settings") {
+                settings_check();
+            } else {
+                settings_service_func();
+            }
+        } else {
+            myJQuery(this).parent().find('.busket_title').text('Добавить в корзину');
+            myJQuery(this).parent().find('.input_shop').removeAttr('checked')
+            if (myJQuery(this).parent().find('.input_shop').attr('id') == "settings") {
+                settings_check();
+            } else {
+                settings_service_func();
+            }
+        }
+    })
+   settings_check();
+  settings_service_func();
+    
+        myJQuery(".switcher_but .btn").click(function () {
+        myJQuery(".switcher_but .btn").removeClass('active_checkbox')
+        myJQuery(this).toggleClass('active_checkbox');
+        if (myJQuery(this).hasClass('active_checkbox')) {
+            if (myJQuery(this).data('type') == 'classic') {
+                myJQuery("#toggle-three").attr('checked','')
+                myJQuery("#toggle-two").attr('checked','checked')
+                input_radio();
+                input_radio_switch();
+            } else {
+                myJQuery("#toggle-two").attr('checked','')
+                myJQuery("#toggle-three").attr('checked','checked')
+                input_radio();
+                input_radio_switch();
+               
+            }
+
+        }
+      
+    })
+    
+ 
+// $('body','hover',$(".block_div-disable")).on
+//    $(".block_div-disable").hover(function () {
+//        $('[data-toggle="tooltip"]').tooltip();
+//        var height = $(".pack_dropdown .btn-group.btn-group_but_tarifs").height();
+//        console.log(height)
+//        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('height', (height)+"px");
+//        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('overflow', 'visible');
+//    }, function () {
+//        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('overflow', 'hidden');
+//        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('height', 'auto')
+//    })
     
     
-    
-   
+    $("body").on("mousemove", ".block_div-disable", function () {
+        var height = $(".pack_dropdown .btn-group.btn-group_but_tarifs").height();
+        console.log(height)
+        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('height', (height) + "px");
+        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('overflow', 'visible');
+    })
+
+    $("body").on("mouseleave", ".block_div-disable", function () {
+       myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('overflow', 'hidden');
+        myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('height', 'auto')
+    })
+   $('[data-toggle="tooltip"]').tooltip();
+
     
 });
