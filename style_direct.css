@@ -761,3 +761,6 @@ padding-right: 7px;
     display: block;
     height: 45px;
 }
+.hidden_from_spam_lebel{
+display:none !important;
+}
