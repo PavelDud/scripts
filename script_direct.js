@@ -536,7 +536,7 @@ myJQuery("#sign").html(myJQuery("<span class='background_zodiak' style='backgrou
         myJQuery(".btn-group_but_tarifs .btn input").each(function () {
             if(!myJQuery(this).hasClass('disabled')){
             var cur_price = myJQuery(this).data(checked_tarif);
-            myJQuery(this).parent().next().text(set_rub(cur_price))
+            myJQuery(this).parent().next().text(set_mounth(cur_price))
         }
         })
         
@@ -584,7 +584,7 @@ myJQuery("#sign").html(myJQuery("<span class='background_zodiak' style='backgrou
                             myJQuery(this).parent().addClass("select_btn");
                             myJQuery(this).addClass("selected_price");
                             cur_price = myJQuery(this).data(checked_tarif);
-                            myJQuery(this).parent().next().text(set_rub(cur_price));
+                            myJQuery(this).parent().next().text(set_mounth(cur_price));
                             btn_id = get_id("active").parent().data('id');
                             set_description_service(get_id("active"), cur_price, that);
                         }
@@ -607,7 +607,9 @@ myJQuery("#sign").html(myJQuery("<span class='background_zodiak' style='backgrou
         }
     }
     
-    
+    function set_mounth(price){
+        return price+" р/мес";
+    }
     
     myJQuery(".btn-group_but_tarifs .btn,.btn-group-tarifs .btn").click(function () {
         group_but_tarifs_func(myJQuery(this));
