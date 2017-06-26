@@ -547,6 +547,7 @@
 
 .form_calculate_col{
     padding-top: 15px;
+    box-sizing: border-box;
 }
 
 .form_calculate .h3_forms {
@@ -639,6 +640,8 @@
 .btn-group .btn-group-s .btn_col{
     padding: 0px 2px;
     box-sizing: border-box;
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 .form_calculate_h3 {
     border-bottom: 0;
@@ -763,4 +766,88 @@ padding-right: 7px;
 }
 .hidden_from_spam_lebel{
 display:none !important;
+}
+
+@media(max-width:1440px){
+    .switcher_but .btn:last-child{
+        float: none;
+        margin-top: 12px;
+    }
+    .switcher_but{
+        text-align: center;
+    }
+    .form_calculate_full{
+        width: 724px;
+    }
+    .pack_dropdown .btn{
+        padding: 5px 5px;
+        font-size: 12px;
+    }
+    .y-g .checkbox:first-child{
+        margin-bottom: 10px;
+    }
+    .btn_col p{
+        width: 53px;
+        margin: 0 auto;
+    }
+    .name_tariff{
+        width: 70px;
+        top: 5px;
+    }
+    
+}
+
+@media(max-width:1200px){
+    .btn_col p{
+        width: auto;
+    }
+ .btn-group .btn-group-s-one .btn_col{
+    margin-bottom: 0px;
+}
+.pack_dropdown .btn-group.btn-group-tarifs{
+    margin-top: -17px;
+}
+
+}
+
+@media(max-width:1023px){
+    .form_calculate_full{
+       width: 65.1%;
+    }
+    .classic .btn, .express .btn {
+    margin-right: 2%;
+    width: 23%;
+    padding: 6px;
+}
+}
+@media(max-width:992px){
+    .form_calculate_full .settings_adv{
+            max-width: initial;
+    }
+    .switcher_but .btn{
+        width: 178px;
+        display: inline-block;
+        float: none;
+        margin: 0 15px 10px;
+    }
+    .switcher_but .btn:last-child{
+        float: none;
+        margin-top: initial;
+    }
+    .name_tariff{
+        width: 130px;
+        top: 15px;
+    }
+     .btn-group_but_tarifs .btn-group-s .btn_col:first-child{
+    margin-bottom: 0;
+}
+}
+@media(max-width:767px){
+     .form_calculate_full{
+       width: 90%;
+       margin: 0 5%;
+    }
+}
+.form_direct{
+    padding-bottom: 50px;
 }
