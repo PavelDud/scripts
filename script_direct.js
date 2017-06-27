@@ -876,6 +876,7 @@ document.body.removeChild(div);
                 $(".form_calculate_col_fixed").css({'left': reigth_col});
                 if (!$(".form_calculate_col_fixed").hasClass("fix_for_side_bar")) {
                     $(".form_calculate_col_fixed").addClass("fix_for_side_bar")
+                    $(".form_calculate_col_fixed").css({'top': height_menu+'px'})
                 }
                 ;
                 if (top_col > $(".form_calculate_full").offset().top + $(".form_calculate_full").outerHeight()) {
@@ -883,7 +884,7 @@ document.body.removeChild(div);
                     if (!$(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && !$(".form_calculate_col_fixed").hasClass('fix_for_side_check')) {
                         $(".form_calculate_col_fixed").css({'bottom': '0px', 'left': 'auto'})
                         $(".form_calculate_col_fixed").addClass('fix_for_side_bar_abs');
-                         $(".form_calculate_col_fixed").css({'top': height_menu+'px'})
+                       
                         $(".form_calculate_col_fixed").addClass("fix_for_side_check");
                     }
                 } else if ($(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && $(window).scrollTop()+ height_menu< $(".form_calculate_col_fixed").offset().top) {
