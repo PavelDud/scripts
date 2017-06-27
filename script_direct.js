@@ -865,6 +865,7 @@ document.body.removeChild(div);
     function lll(){
         if ($("body").outerWidth() + scrollWidth > 991) {
             height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
+            height_fix=$(".form_calculate_col_fixed").outerHeight();
               console.log(height_menu);
            top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
             if ($(window).scrollTop() +height_menu> menu_vertical_h) {
