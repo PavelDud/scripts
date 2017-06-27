@@ -857,7 +857,7 @@ document.body.removeChild(div);
     var width_fix=$(".form_calculate_col_first").outerWidth();
      var height_fix=$(".form_calculate_col_fixed").outerHeight();
     var top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
-    var height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").outerHeight();
+    var height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
     lll();
     
    
@@ -912,7 +912,7 @@ document.body.removeChild(div);
     top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
      width_fix = $(".form_calculate_col_first").outerWidth();
     height_fix = $(".form_calculate_col_fixed").outerHeight();
-    height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").outerHeight();
+    height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
         lll();
     })
 
