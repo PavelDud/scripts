@@ -794,7 +794,9 @@ display:none !important;
         width: 70px;
         top: 5px;
     }
-    
+    .classic .btn, .express .btn {
+    margin-right: 4px;
+}
 }
 
 @media(max-width:1200px){
