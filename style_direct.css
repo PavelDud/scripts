@@ -906,9 +906,7 @@ display:none !important;
     .form_calculate_full .servises_elem p, .form_calculate_full .wrap_for_info p{
         font-size: 10px;
     }
-     .form_calculate_full .servises_elem p .fa, .form_calculate_full .wrap_for_info p .fa{
-       font: 10px/20px Arial,Geneva,Helvetica,sans-serif;
-    }
+    
     
  
 }
