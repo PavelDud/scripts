@@ -821,6 +821,14 @@ display:none !important;
     width: 23%;
     padding: 6px;
 }
+    .checkbox-inline .busket_title {
+    padding-right: 7px;
+    text-align: right;
+    width: 60px;
+    display: inline-block;
+    float: left;
+    line-height: 16px;
+}
 }
 @media(max-width:992px){
     .form_calculate_full .settings_adv{
