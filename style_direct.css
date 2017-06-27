@@ -456,7 +456,7 @@
 }
 .form_calculate_full{
     background: #E8F5E9;
-    margin:0 -5%;
+
 }
 
 
@@ -866,6 +866,9 @@ display:none !important;
     }*/
     #content{
     overflow:visible;
+    }
+    .form_calculate_full{
+        margin:0 -5%;
     }
 }
 
