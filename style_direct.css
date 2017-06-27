@@ -870,6 +870,9 @@ display:none !important;
     .form_calculate_full{
         margin:0 -5%;
     }
+    .form_calculate .h3_forms{
+        max-width:initial;
+    }
 }
 
 @media(max-width:445px){
