@@ -874,7 +874,8 @@ document.body.removeChild(div);
                 if (!$(".form_calculate_col_fixed").hasClass("fix_for_side_bar")) {
                     $(".form_calculate_col_fixed").addClass("fix_for_side_bar")
                 }
-                if (top_col > $("#bottom").offset().top - 20) {
+                ;
+                if (top_col > $(".form_calculate_full").offset().top + $(".form_calculate_full").outerHeight()) {
                     console.log("qwe")
                     if (!$(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && !$(".form_calculate_col_fixed").hasClass('fix_for_side_check')) {
                         $(".form_calculate_col_fixed").css({'bottom': '0px', 'left': 'auto'})
