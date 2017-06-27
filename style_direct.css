@@ -860,9 +860,7 @@ display:none !important;
        margin: 0 5%;
     }*/
 }
-.form_direct{
-    padding-bottom: 50px;
-}
+
 @media(max-width:445px){
     .checkbox-inline .busket_title{
         padding-right: 7px;
