@@ -851,25 +851,24 @@ document.body.removeChild(div);
 
 
 
-    var menu_vertical_h = $('.form_calculate_col_fixed').offset().top;
+ var menu_vertical_h = $('.form_calculate_col_fixed').offset().top;
     var stop_margin_top = 0;
     var reigth_col=$(".form_calculate_col_first").outerWidth()+$(".form_calculate_full").offset().left
-    var width_fix=$(".form_calculate_col_first").outerWidth()-1;
-    
+    var width_fix=$(".form_calculate_col_first").outerWidth();
      var height_fix=$(".form_calculate_col_fixed").outerHeight();
     var top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
     
     lll();
-  $(".form_calculate_col_fixed").css({'width': width_fix})
+    
    
     function lll(){
         if ($("body").outerWidth() + scrollWidth > 991) {
            top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
             if ($(window).scrollTop() > menu_vertical_h) {
               
-                 //width_fix = $(".form_calculate_col_first").outerWidth();
+                 width_fix = $(".form_calculate_col_first").outerWidth();
                    console.log(width_fix)
-                $(".form_calculate_col_fixed").css({'left': reigth_col, 'height': height_fix});
+                $(".form_calculate_col_fixed").css({'left': reigth_col, 'width': width_fix, 'height': height_fix});
                
                 $(".form_calculate_col_fixed").css({'left': reigth_col});
                 if (!$(".form_calculate_col_fixed").hasClass("fix_for_side_bar")) {
@@ -892,8 +891,7 @@ document.body.removeChild(div);
 
             } else {
                 $(".form_calculate_col_fixed").removeClass("fix_for_side_bar");
-                $(".form_calculate_col_fixed").css({'left': '', 'height': ''});
-                
+                $(".form_calculate_col_fixed").css({'left': '', 'width': '', 'height': ''});
             }
         } else {
             $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
@@ -910,16 +908,14 @@ document.body.removeChild(div);
     $(window).resize(function () {
     reigth_col = $(".form_calculate_col_first").outerWidth() + $(".form_calculate_full").offset().left
     top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
-     width_fix = $(".form_calculate_col_first").outerWidth()-1;
+     width_fix = $(".form_calculate_col_first").outerWidth();
     height_fix = $(".form_calculate_col_fixed").outerHeight();
-    $(".form_calculate_col_fixed").css({'width': width_fix})
         lll();
     })
 
     $(window).scroll(function () {
         lll();
     });
-
 
 
 
