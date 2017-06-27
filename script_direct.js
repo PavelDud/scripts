@@ -897,7 +897,7 @@ document.body.removeChild(div);
 
             } else {
                 $(".form_calculate_col_fixed").removeClass("fix_for_side_bar");
-                $(".form_calculate_col_fixed").css({'left': '', 'width': '', 'height': ''});
+                $(".form_calculate_col_fixed").css({'left': '', 'width': '', 'height': '','top': ''});
             }
         } else {
             $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
