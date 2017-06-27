@@ -837,5 +837,92 @@ myJQuery("#sign").html(myJQuery("<span class='background_zodiak' style='backgrou
     })
    $('[data-toggle="tooltip"]').tooltip();
 
+
+
+var div = document.createElement('div');
+div.style.overflowY = 'scroll';
+div.style.width = '50px';
+div.style.height = '50px';
+div.style.visibility = 'hidden';
+document.body.appendChild(div);
+var scrollWidth = div.offsetWidth - div.clientWidth;
+document.body.removeChild(div);
+
+
+
+
+    var menu_vertical_h = $('.form_calculate_col_fixed').offset().top;
+    var stop_margin_top = 0;
+    var reigth_col=$(".form_calculate_col_first").outerWidth()+$(".form_calculate_full").offset().left
+    var width_fix=$(".form_calculate_col_first").outerWidth()-1;
+    
+     var height_fix=$(".form_calculate_col_fixed").outerHeight();
+    var top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
+    
+    lll();
+  $(".form_calculate_col_fixed").css({'width': width_fix})
+   
+    function lll(){
+        if ($("body").outerWidth() + scrollWidth > 991) {
+           top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
+            if ($(window).scrollTop() > menu_vertical_h) {
+              
+                 //width_fix = $(".form_calculate_col_first").outerWidth();
+                   console.log(width_fix)
+                $(".form_calculate_col_fixed").css({'left': reigth_col, 'height': height_fix});
+               
+                $(".form_calculate_col_fixed").css({'left': reigth_col});
+                if (!$(".form_calculate_col_fixed").hasClass("fix_for_side_bar")) {
+                    $(".form_calculate_col_fixed").addClass("fix_for_side_bar")
+                }
+                if (top_col > $(".footer").offset().top - 20) {
+                    console.log("qwe")
+                    if (!$(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && !$(".form_calculate_col_fixed").hasClass('fix_for_side_check')) {
+                        $(".form_calculate_col_fixed").css({'bottom': '0px', 'left': 'auto'})
+                        $(".form_calculate_col_fixed").addClass('fix_for_side_bar_abs');
+                        $(".form_calculate_col_fixed").addClass("fix_for_side_check");
+                    }
+                } else if ($(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && $(window).scrollTop() < $(".form_calculate_col_fixed").offset().top) {
+                    $(".form_calculate_col_fixed").css({'top': 0});
+                    $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
+                    $(".form_calculate_col_fixed").removeClass("fix_for_side_check");
+                    $(".form_calculate_col_fixed").css({'left': reigth_col})
+                    $(".form_calculate_col_fixed").css({'bottom': '', 'top': ''})
+                }
+
+            } else {
+                $(".form_calculate_col_fixed").removeClass("fix_for_side_bar");
+                $(".form_calculate_col_fixed").css({'left': '', 'height': ''});
+                
+            }
+        } else {
+            $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
+            $(".form_calculate_col_fixed").removeClass("fix_for_side_check");
+            $(".form_calculate_col_fixed").removeClass("fix_for_side_bar");
+            $(".form_calculate_col_fixed").css({'bottom': '', 'top': '', 'left': '', 'width': '', 'height': ''})
+        }
+        
+        
+        
+    }
+    
+    
+    $(window).resize(function () {
+    reigth_col = $(".form_calculate_col_first").outerWidth() + $(".form_calculate_full").offset().left
+    top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
+     width_fix = $(".form_calculate_col_first").outerWidth()-1;
+    height_fix = $(".form_calculate_col_fixed").outerHeight();
+    $(".form_calculate_col_fixed").css({'width': width_fix})
+        lll();
+    })
+
+    $(window).scroll(function () {
+        lll();
+    });
+
+
+
+
+
     
 });
