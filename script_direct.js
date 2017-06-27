@@ -858,13 +858,14 @@ document.body.removeChild(div);
      var height_fix=$(".form_calculate_col_fixed").outerHeight();
     var top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
     var height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
-    console.log(height_menu);
+  
     lll();
     
    
     function lll(){
         if ($("body").outerWidth() + scrollWidth > 991) {
             height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
+              console.log(height_menu);
            top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
             if ($(window).scrollTop() +height_menu> menu_vertical_h) {
               
@@ -885,7 +886,7 @@ document.body.removeChild(div);
                          $(".form_calculate_col_fixed").css({'top': height_menu+'px'})
                         $(".form_calculate_col_fixed").addClass("fix_for_side_check");
                     }
-                } else if ($(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && $(window).scrollTop()+$(".header_inner.navi_scrolled.navi_scrolled_resize").outerHeight() < $(".form_calculate_col_fixed").offset().top) {
+                } else if ($(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && $(window).scrollTop()+ height_menu< $(".form_calculate_col_fixed").offset().top) {
                     $(".form_calculate_col_fixed").css({'top': height_menu+'px'});
                     $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
                     $(".form_calculate_col_fixed").removeClass("fix_for_side_check");
