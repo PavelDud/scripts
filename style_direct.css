@@ -817,9 +817,11 @@ display:none !important;
        width: 65.1%;
     }*/
     .classic .btn, .express .btn {
-    margin-right: 1%;
+      margin-right: 2%;
     width: 23%;
     padding: 6px;
+    float: left;
+    margin-bottom: 10px;
 }
     .checkbox-inline .busket_title {
     padding-right: 7px;
