@@ -456,6 +456,7 @@
 }
 .form_calculate_full{
     background: #E8F5E9;
+    margin:0 -5%;
 }
 
 
@@ -853,12 +854,19 @@ display:none !important;
      .btn-group_but_tarifs .btn-group-s .btn_col:first-child{
     margin-bottom: 0;
 }
+    .y-g{text-align:center}
+    .y-g .checkbox{
+        display: inline-block;
+    }
 }
 @media(max-width:767px){
      /*.form_calculate_full{
        width: 90%;
        margin: 0 5%;
     }*/
+    #content{
+    overflow:visible;
+    }
 }
 
 @media(max-width:445px){
