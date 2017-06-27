@@ -864,7 +864,7 @@ document.body.removeChild(div);
     function lll(){
         if ($("body").outerWidth() + scrollWidth > 991) {
            top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
-            if ($(window).scrollTop() > menu_vertical_h) {
+            if ($(window).scrollTop() +$(".header_inner.navi_scrolled.navi_scrolled_resize").outerHeight()> menu_vertical_h) {
               
                  width_fix = $(".form_calculate_col_first").outerWidth();
                    console.log(width_fix)
