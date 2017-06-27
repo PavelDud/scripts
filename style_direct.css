@@ -883,3 +883,12 @@ display:none !important;
     }
  
 }
+.fix_for_side_bar{position:fixed !important;margin-bottom:20px;top:0;}
+.fix_for_side_bar.fix_for_side_bar_abs{position:absolute !important;right:0px !important;left:auto  !important;top:auto  !important}
+.footer{
+    height: 500px;
+    background: green;
+}
+.form_calculate{
+    overflow: hidden;
+}
