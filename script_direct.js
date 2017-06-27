@@ -892,7 +892,7 @@ document.body.removeChild(div);
                     $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
                     $(".form_calculate_col_fixed").removeClass("fix_for_side_check");
                     $(".form_calculate_col_fixed").css({'left': reigth_col})
-                    //$(".form_calculate_col_fixed").css({'bottom': '', 'top': ''})
+                    $(".form_calculate_col_fixed").css({'bottom': ''})
                 }
 
             } else {
