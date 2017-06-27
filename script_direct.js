@@ -880,6 +880,7 @@ document.body.removeChild(div);
                     if (!$(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && !$(".form_calculate_col_fixed").hasClass('fix_for_side_check')) {
                         $(".form_calculate_col_fixed").css({'bottom': '0px', 'left': 'auto'})
                         $(".form_calculate_col_fixed").addClass('fix_for_side_bar_abs');
+                         $(".form_calculate_col_fixed").css({'top': height_menu+'px'})
                         $(".form_calculate_col_fixed").addClass("fix_for_side_check");
                     }
                 } else if ($(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && $(window).scrollTop()+$(".header_inner.navi_scrolled.navi_scrolled_resize").outerHeight() < $(".form_calculate_col_fixed").offset().top) {
