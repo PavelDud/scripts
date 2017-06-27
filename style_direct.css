@@ -815,9 +815,9 @@ display:none !important;
 }
 
 @media(max-width:1023px){
-    .form_calculate_full{
+    /*.form_calculate_full{
        width: 65.1%;
-    }
+    }*/
     .classic .btn, .express .btn {
     margin-right: 1%;
     width: 23%;
@@ -847,10 +847,10 @@ display:none !important;
 }
 }
 @media(max-width:767px){
-     .form_calculate_full{
+     /*.form_calculate_full{
        width: 90%;
        margin: 0 5%;
-    }
+    }*/
 }
 .form_direct{
     padding-bottom: 50px;
