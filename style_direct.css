@@ -855,6 +855,7 @@ display:none !important;
     .y-g{text-align:center}
     .y-g .checkbox{
         display: inline-block;
+        float:none;
     }
 }
 @media(max-width:767px){
