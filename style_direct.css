@@ -39,7 +39,9 @@
     margin-right: 30px;
     
 }
-
+.form_calculate_full{
+    padding-bottom:30px;
+}
 .servises .res{
     position: absolute;
     display: block;
