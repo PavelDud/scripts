@@ -857,6 +857,9 @@ display:none !important;
         display: inline-block;
         float:none;
     }
+    .y-g .checkbox:first-child{
+        float:none;
+    }
 }
 @media(max-width:767px){
      /*.form_calculate_full{
