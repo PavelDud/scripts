@@ -1,3 +1,4 @@
+
 myJQuery(function () {
     var content = "";
     var coust_current = 0;
@@ -77,7 +78,7 @@ myJQuery(function () {
         }
         if (!myJQuery(".result>div.yandex.settings").hasClass("none")) {
             coust_current = Number(cost);
-            console.log(coust_current)
+            
             myJQuery(".result>div.yandex.settings .tariff").text(label);
             myJQuery(".result>div.yandex.settings .count_phraze").text(words);
             myJQuery(".result>div.yandex.settings .total .first").text(cost);
@@ -294,10 +295,10 @@ myJQuery(function () {
             if (myJQuery(".classic .btn").hasClass("select_btn") || myJQuery(".express .btn").hasClass("select_btn")) {
                  myJQuery(".result>div.settings").removeClass('none')
                  if(myJQuery("#toggle-two").prop("checked")){
-                     console.log('qwe4')
+                     
                      func_under_classic(myJQuery(".classic .btn.select_btn"))
                  }else if(myJQuery("#toggle-three").prop("checked")){
-                     console.log('qwe3')
+                  
                      func_under_express(myJQuery(".express .btn.select_btn"))
                  }
                  
@@ -460,6 +461,7 @@ myJQuery(function () {
 //            return htmls;
         }
          $('[data-toggle="tooltip"]').tooltip();
+       
     }
       //кнопки под классиком
       
@@ -826,7 +828,7 @@ myJQuery("#sign").html(myJQuery("<span class='background_zodiak' style='backgrou
     
     $("body").on("mousemove", ".block_div-disable", function () {
         var height = $(".pack_dropdown .btn-group.btn-group_but_tarifs").height();
-        console.log(height)
+       
         myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('height', (height) + "px");
         myJQuery(".pack_dropdown .btn-group.btn-group_but_tarifs").css('overflow', 'visible');
     })
@@ -863,15 +865,24 @@ document.body.removeChild(div);
     
    
     function lll(){
-        if ($("body").outerWidth() + scrollWidth > 991) {
+        
+        if ($("body").outerWidth() + scrollWidth > 991 && !(height_fix>1281)) {
+            
             height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
+            $(".form_calculate_col_fixed").css({'height': 'auto'});
+            
             height_fix=$(".form_calculate_col_fixed").outerHeight();
-              console.log(height_menu);
-           top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
+            $(".form_calculate_col_fixed").css({'height': height_fix});
+         
+                
+          
+            console.log(height_fix)
+            top_col = $(".form_calculate_col_fixed").offset().top + $(".form_calculate_col_fixed").height();
+            //если скрол окна больше верха сайдбара (захватываем сайдбар)
             if ($(window).scrollTop() +height_menu> menu_vertical_h) {
               
                  width_fix = $(".form_calculate_col_first").outerWidth();
-                   console.log(width_fix)
+                 
                 $(".form_calculate_col_fixed").css({'left': reigth_col, 'width': width_fix, 'height': height_fix});
                
                 $(".form_calculate_col_fixed").css({'left': reigth_col});
@@ -879,9 +890,9 @@ document.body.removeChild(div);
                     $(".form_calculate_col_fixed").addClass("fix_for_side_bar")
                     $(".form_calculate_col_fixed").css({'top': height_menu+'px'})
                 }
-                ;
+                
                 if (top_col > $(".container.form_calculate").offset().top + $(".container.form_calculate").outerHeight()) {
-                    console.log("qwe")
+                   
                     if (!$(".form_calculate_col_fixed").hasClass('fix_for_side_bar_abs') && !$(".form_calculate_col_fixed").hasClass('fix_for_side_check')) {
                         $(".form_calculate_col_fixed").css({'bottom': '0px', 'left': 'auto'})
                         $(".form_calculate_col_fixed").addClass('fix_for_side_bar_abs');
@@ -898,13 +909,16 @@ document.body.removeChild(div);
 
             } else {
                 $(".form_calculate_col_fixed").removeClass("fix_for_side_bar");
-                $(".form_calculate_col_fixed").css({'left': '', 'width': '', 'height': '','top': ''});
+                $(".form_calculate_col_fixed").css({'left': '', 'width': '', 'height': height_fix,'top': ''});
+                console.log('qwe')
             }
-        } else {
+        
+          }else {
             $(".form_calculate_col_fixed").removeClass('fix_for_side_bar_abs');
             $(".form_calculate_col_fixed").removeClass("fix_for_side_check");
             $(".form_calculate_col_fixed").removeClass("fix_for_side_bar");
             $(".form_calculate_col_fixed").css({'bottom': '', 'top': '', 'left': '', 'width': '', 'height': ''})
+            height_fix=$(".form_calculate_col_fixed").outerHeight();
         }
         
         
@@ -918,6 +932,7 @@ document.body.removeChild(div);
      width_fix = $(".form_calculate_col_first").outerWidth();
     height_fix = $(".form_calculate_col_fixed").outerHeight();
     height_menu=$(".header_inner.navi_scrolled.navi_scrolled_resize").height();
+     $(".form_calculate_col_fixed").css({'top': height_menu+'px'});
         lll();
     })
 
